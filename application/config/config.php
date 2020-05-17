@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] 	= 'http://torrent-empire.org';
+$config['base_url'] 	= 'http://localhost';
 $config['site_name'] 	= 'Torrent Empire';
 
 $config['header_css'] = array();
@@ -44,7 +44,7 @@ $config['header_js']  = array();
 */
 $config['index_page'] = '';
 
-$config['announce_url'] = 'http://torrent-empire.org/announce.php';
+$config['announce_url'] = 'http://localhost/announce.php';
 
 /*
 |--------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 <?php $this->load->view('include_auth/header'); ?>
-	<a class="btn btn-primary btn-lg btn-block" href="" data-toggle="modal" data-target="#myModal">Inloggen - Aanmelden</a>
+	<a class="btn btn-primary btn-lg btn-block" href="" data-toggle="modal" data-target="#myModal">Login - Register</a>
 	<!-- Button trigger modal -->
 
 
@@ -18,7 +18,7 @@
 
     <?php echo form_open("auth/login", array('class' => 'form-horizontal')); ?>
     <?php $error = (isset($field['name'])) ? form_error($field['name']) : NULL; ?>
-    <div class="control-group <? if (!empty($error)): ?>error<? endif; ?>">
+    <div class="control-group <?php if (!empty($error)): ?>error<?php endif; ?>">
         <div class="form-group">
             <?php echo form_label($this->lang->line('login_identity_label'), 'identity', array('class' => 'col-sm-2 control-label')); ?>
             <div class="col-sm-12"><?php echo form_input($identity, NULL, 'class="form-control"'); ?></div>

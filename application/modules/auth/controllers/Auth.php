@@ -108,11 +108,11 @@ class Auth extends MY_Controller {
         }
 
         //validate form input
-        $this->form_validation->set_rules('username', 'Gebruikersnaam', 'required');
+        $this->form_validation->set_rules('username', 'User name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-        $this->form_validation->set_rules('password', 'Wachtwoord', 'required|matches[password_confirm]|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']');
-        $this->form_validation->set_rules('password_confirm', 'Herhaal wachtwoord', 'required');
-        $this->form_validation->set_rules('country', 'Land', 'required|is_natural_no_zero');
+        $this->form_validation->set_rules('password', 'password', 'required|matches[password_confirm]|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']');
+        $this->form_validation->set_rules('password_confirm', 'repeat password', 'required');
+        $this->form_validation->set_rules('country', 'Country', 'required|is_natural_no_zero');
 
 
 
@@ -140,7 +140,7 @@ class Auth extends MY_Controller {
         }
         if ($this->form_validation->run() == true && $this->ion_auth->register($username, $password, $email, $additional_data)) {
 
-            $this->session->set_flashdata('info', 'Gelukt je bent aangemeld !');
+            $this->session->set_flashdata('info', 'Did you sign up successfully !');
             redirect('auth/login');
         } else {
             //display the create user form
